@@ -29,11 +29,13 @@ struct NiceDFSM
             {
                 currentState = nextIt->second;
                 state = &states[currentState];
-                if (state->isAccepting)
-                    return true;
+                //if (state->isAccepting) /*We return true IF and ONLY IF the string has been entirely processed. (case "nicee" */
+                //    return true;
             }
 
         }
+
+        return state->isAccepting ? true : false;
 	}
 
     NiceDFSM()

@@ -28,5 +28,6 @@ add_executable (Tests
  
 	tests/test_main.cpp 
 	tests/NiceDFSM.cpp
+	tests/transitionFunc.cpp
 	
 	)
