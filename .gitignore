@@ -3,7 +3,8 @@
 *.dll
 *.a
 App
-Test
+Tests
 CMakeFile*
+CMakeCache*
 cmake*
 Makefile
