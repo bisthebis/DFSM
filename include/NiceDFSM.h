@@ -39,9 +39,9 @@ struct NiceDFSM
     NiceDFSM()
     {
         states[0].transitions['n'] = 1;
-        states[1].transitions['n'] = 2;
-        states[2].transitions['n'] = 3;
-        states[3].transitions['n'] = 4;
+        states[1].transitions['i'] = 2;
+        states[2].transitions['c'] = 3;
+        states[3].transitions['e'] = 4;
         states[4].isAccepting = true;
     }
 
