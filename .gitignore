@@ -1,0 +1,9 @@
+*.o
+*.so
+*.dll
+*.a
+App
+Test
+CMake*
+cmake*
+Makefile
