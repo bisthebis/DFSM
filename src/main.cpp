@@ -1,4 +1,5 @@
 #include <iostream>
+#include "NiceDFSM.h"
 
 using namespace std;
 

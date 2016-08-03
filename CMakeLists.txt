@@ -9,3 +9,7 @@ set (CMAKE_CXX_STANDARD 14)
 
 add_subdirectory(src)
 add_subdirectory(tests)
+
+#For seeing headers in IDE
+FILE(GLOB_RECURSE LibFiles "include/*.h")
+add_custom_target(headers SOURCES ${LibFiles})
