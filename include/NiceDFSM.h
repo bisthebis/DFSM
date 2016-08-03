@@ -15,7 +15,7 @@ struct NiceDFSM
 	State states[5];
     int currentState = 0;
 
-    bool process(const std::string& src)
+    bool parse(const std::string& src)
 	{
         State* state = &states[currentState];
 
@@ -27,7 +27,7 @@ struct NiceDFSM
                 return false;
             else
             {
-                currentState = *nextIt;
+                currentState = nextIt->second;
                 state = &states[currentState];
                 if (state->isAccepting)
                     return true;

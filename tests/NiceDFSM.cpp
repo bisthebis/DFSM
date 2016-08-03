@@ -1,11 +1,11 @@
 #include "catch.hpp"
-#include "include/NiceDFSM.h"
+#include "NiceDFSM.h"
 
 TEST_CASE("Nice is correctly parsed", "[niceDFSM]")
 {
 	NiceDFSM machine;
 
-	REQUIRE(machine.parse("nice"));
-	REQUIRE_FALSE(machine.parse("Nice"));
+	CHECK(machine.parse("nice"));
+	CHECK_FALSE(machine.parse("Nice"));
 
 }
