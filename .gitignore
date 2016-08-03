@@ -8,3 +8,5 @@ CMakeFile*
 CMakeCache*
 cmake*
 Makefile
+CMakeLists\..*
+.*cbp
