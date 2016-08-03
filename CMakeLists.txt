@@ -19,15 +19,18 @@ add_custom_target(headers SOURCES ${LibFiles})
 add_executable (App 
 	
 	src/main.cpp
-	
+        src/sandboxdfsm.cpp
 	
 	
 	)
 	
 add_executable (Tests
  
+        src/sandboxdfsm.cpp
+
 	tests/test_main.cpp 
 	tests/NiceDFSM.cpp
 	tests/transitionFunc.cpp
+        tests/sandboxdfsm.cpp
 	
 	)

@@ -1,7 +1,7 @@
-*.o
-*.so
-*.dll
-*.a
+.*\.o
+.*\.so
+.*\.dll
+.*\.a
 App
 Tests
 CMakeFile*
