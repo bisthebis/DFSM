@@ -4,6 +4,6 @@
 *.a
 App
 Test
-CMake*
+CMakeFile*
 cmake*
 Makefile
