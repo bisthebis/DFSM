@@ -12,9 +12,9 @@ TEST_CASE("SandboxDFSM work for trivial models", "[Sandbox]")
     auto machine1Lambda = [](int x) {if(isdigit(x)) return 1; else if (isalpha(x)) return 2; else return -1;};
 
     SandboxDFSM machine1({
-                             State(machine1Lambda, false),
-                             State(machine1Lambda, false),
-                             State(machine1Lambda, true)
+                             SandboxedState(machine1Lambda, false),
+                             SandboxedState(machine1Lambda, false),
+                             SandboxedState(machine1Lambda, true)
                          });
     CHECK(machine1.parse("ikfhsdfhjZJHKF23545fdzA"));
     CHECK_FALSE(machine1.parse("ikfhsdfhj$ZJHKF23545fdzA"));
@@ -26,9 +26,9 @@ TEST_CASE("SandboxDFSM work for trivial models", "[Sandbox]")
     //State 2 -> Final state, always return -1
 
     SandboxDFSM machine2({
-                             State([](int x) {return isupper(x) ? 1 : -1;}, false),
-                             State([](int x) {if (islower(x)) return 1; else return isdigit(x) ? 2 : -1;}, false),
-                             State([](int x) {return -1;}, true)
+                             SandboxedState([](int x) {return isupper(x) ? 1 : -1;}, false),
+                             SandboxedState([](int x) {if (islower(x)) return 1; else return isdigit(x) ? 2 : -1;}, false),
+                             SandboxedState([](int x) {return -1;}, true)
                          });
     CHECK(machine2.parse("Azerrtyuy5"));
     CHECK_FALSE(machine2.parse("Azerrtyuy"));
@@ -44,11 +44,11 @@ TEST_CASE("SandboxDFSM work for trivial models", "[Sandbox]")
 
 
     SandboxDFSM machine3({
-                             State([](int x) {if (isdigit(x)) return 2; if (x == '+' || x == '-') return 1; else return -1;}, false),
-                             State([](int x) {return isdigit(x) ? 2 : -1;}, false),
-                             State([](int x) {if (isdigit(x)) return 2; else if (x == '.' || x == ',') return 3; else return -1;}, true),
-                             State([](int x) {return isdigit(x) ? 4 : -1;}, false),
-                             State([](int x) {return isdigit(x) ? 4 : -1;}, true)
+                             SandboxedState([](int x) {if (isdigit(x)) return 2; if (x == '+' || x == '-') return 1; else return -1;}, false),
+                             SandboxedState([](int x) {return isdigit(x) ? 2 : -1;}, false),
+                             SandboxedState([](int x) {if (isdigit(x)) return 2; else if (x == '.' || x == ',') return 3; else return -1;}, true),
+                             SandboxedState([](int x) {return isdigit(x) ? 4 : -1;}, false),
+                             SandboxedState([](int x) {return isdigit(x) ? 4 : -1;}, true)
                          }
 
                 );
