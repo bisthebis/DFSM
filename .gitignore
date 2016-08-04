@@ -3,7 +3,7 @@
 .*\.dll
 .*\.a
 App
-Tests
+RunTest
 CMakeFile*
 CMakeCache*
 cmake*

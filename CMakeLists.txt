@@ -24,7 +24,7 @@ add_executable (App
 	
 	)
 	
-add_executable (Tests
+add_executable (RunTests
  
         src/sandboxdfsm.cpp
 
