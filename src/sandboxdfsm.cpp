@@ -1,7 +1,7 @@
 #include "sandboxdfsm.h"
 
 
-bool SandboxDFSM::parse(const std::string& str)
+bool SandboxDFSM::parse(const std::string& str) const
 {
 
     int currentState = 0;

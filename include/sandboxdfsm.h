@@ -31,7 +31,7 @@ class SandboxDFSM
 
     public:
         SandboxDFSM(const std::vector<State>& states) : states(states){}
-        bool parse(const std::string& str);
+        bool parse(const std::string& str) const;
     private:
         std::vector<State> states;
 
